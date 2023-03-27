@@ -25,20 +25,17 @@ def compute_room_area(room_number):
 
 def compute_rectangle_walls_area():
     length = int(input("What is the length of the wall?"))
-    width = int(input("What is the height of the wall?"))
-    area_of_wall = length * width
+    width = int(input("What is the width of the wall?"))
+    height = int(input("What is the height of the wall?"))
+    area_of_wall = length * width * 2
+    area_of_wall += length * height * 2
     return area_of_wall
-
-    pass
 
 
 def calculate_rectangle_area():
     area = 0
-    for i in range(4):
-        area += compute_rectangle_walls_area() - compute_windows_doors_area()
+    area += compute_rectangle_walls_area() - compute_windows_doors_area()
     return area
-
-    pass
 
 
 def compute_square_walls_area():
