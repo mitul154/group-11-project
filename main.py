@@ -1,6 +1,6 @@
 # Initializing variables
 
-area = 350
+area = 0
 length = 0
 width = 0
 
@@ -20,11 +20,16 @@ def computeRoomArea(room_number):
 
 
 def computeRectangleWallsArea():
-    pass
+    length = int(input("What is the length of the wall?"))
+    width = int(input("What is the height of the wall?"))
+    areaOfWall = length * width
+    return areaOfWall
 
 
 def calculateRectangleArea():
-    pass
+    for i in range(4):
+        area += computeRectangleWallsArea - computeWindowsDoorsArea
+    return area
 
 
 def computeSquareWallsArea():
@@ -47,12 +52,9 @@ def computeGallons():
     AREAPERGALLON = 350
     totalGallons = area / AREAPERGALLON
     return totalGallons
-   
 
 
 def computePaintPrice():
     PRICEPERGALLON = 42
     totalPaintPrice = computeGallons() * 42
     print(totalPaintPrice)
-
-computePaintPrice()
