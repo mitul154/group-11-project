@@ -4,12 +4,10 @@ paint_cost = 42     # Cost of each gallon of paint ($CDN/gal)
 labour_cost = 0
 
 
-
 def compute_room_area(room_number):
     shape = int(input("Select the shape of the wall of the room from the following:\n"
-    
-                  "Type '1' for Rectangular"
-                  "Type '2' for Square"
+                  "Type '1' for Rectangular\n"
+                  "Type '2' for Square\n"
                   "Type '3' for Custom"))
     if shape == 1:
         length = int(input("Enter the length of the room in feet: "))
@@ -25,14 +23,11 @@ def compute_room_area(room_number):
         number_of_dimensions = int(input("Enter the number of dimensions: "))
 
 
-
-
-
 def compute_rectangle_walls_area():
     length = int(input("What is the length of the wall?"))
     width = int(input("What is the height of the wall?"))
-    areaOfWall = length * width
-    return areaOfWall
+    area_of_wall = length * width
+    return area_of_wall
 
     pass
 
@@ -44,7 +39,6 @@ def calculate_rectangle_area():
     return area
 
     pass
-
 
 
 def compute_square_walls_area():
