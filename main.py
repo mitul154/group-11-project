@@ -65,15 +65,15 @@ def compute_custom_walls_area():
 
 def compute_gallons():
     AREAPERGALLON = 350
-    totalGallons = calculate_rectangle_area() / AREAPERGALLON
-    return totalGallons
+    total_gallons = calculate_rectangle_area() / AREAPERGALLON
+    return total_gallons
 
     pass
 
 
 def compute_paint_price():
     PRICEPERGALLON = 42
-    totalPaintPrice = compute_gallons() * 42
-    print(totalPaintPrice)
+    total_paint_price = compute_gallons() * 42
+    print(total_paint_price)
 
     pass
