@@ -10,12 +10,7 @@ areaOfWall = 0
 
 def compute_room_area():
     
-    shape = int(input("Select the shape of the wall of the room from the following:\n"
-    
-    
-                  "Type '1' for Rectangular"
-                  "Type '2' for Square"
-                  "Type '3' for Custom" ))
+    shape = int(input("Select the shape of the wall of the room from the following:\n Type '1' for Rectangular \n Type '2' for Square \n Type '3' for Custom: \n \n " ))
     if shape == 1:
         length = int(input("Enter the length of the room in feet: "))
         width = int(input("Enter the width of the room in feet: "))
@@ -25,6 +20,7 @@ def compute_room_area():
         print(area)
     elif shape == 2:
         compute_square_area()
+        compute_windows_doors_area()
     elif shape == 3:
         number_of_dimensions = int(input("Enter the number of dimensions: "))
 
@@ -76,7 +72,13 @@ def compute_square_area():
 
 
 def compute_windows_doors_area():
-    pass
+    number_of_windowsOrDoors = int(input("How many windows and doors does the room contain? "))
+    
+    for i in range(number_of_windowsOrDoors):
+        windowOrDoor_length = int(input("What is the length of the door or window? "))
+        windowOrDoor_width = int(input("What is the width of the door or window? "))
+        compute_square_area(totalArea) -= windowOrDoor_length * windowOrDoor_width
+    
 
 
 def compute_custom_walls_area():
