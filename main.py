@@ -1,8 +1,9 @@
 # Initializing variables
 
-area = 0
+area = 350
 length = 0
 width = 0
+
 
 def computeRoomArea(room_number):
     shape = input("Select the shape of the wall of the room from the following:\n"
@@ -43,8 +44,15 @@ def computeCustomWallsArea():
 
 
 def computeGallons():
-    pass
+    AREAPERGALLON = 350
+    totalGallons = area / AREAPERGALLON
+    return totalGallons
+   
 
 
 def computePaintPrice():
-    pass
+    PRICEPERGALLON = 42
+    totalPaintPrice = computeGallons() * 42
+    print(totalPaintPrice)
+
+computePaintPrice()
