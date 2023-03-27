@@ -3,6 +3,9 @@ paint_coverage = 350    # Paint coverage in square feet per gallon (ft2/gal)
 paint_cost = 42     # Cost of each gallon of paint ($CDN/gal)
 labour_cost = 0
 areas = []
+two_wall = 2
+four_walls = 4
+factor_of_square = 2
 
 
 def compute_room_area(room_number, current_room):
@@ -12,7 +15,7 @@ def compute_room_area(room_number, current_room):
     shape = int(input("Select the shape of the wall of the room from the following:\n"
                       "Type '1' for Rectangular\n"
                       "Type '2' for Square\n"
-                      "Type '3' for Custom (more or less than 4 walls, all square or rectangles)"))
+                      "Type '3' for Custom (more or less than 4 walls, all square or rectangles)\n"))
     if shape == 1:
         area_of_rectangular_walls = compute_rectangle_walls_area()
     elif shape == 2:
@@ -25,18 +28,16 @@ def compute_room_area(room_number, current_room):
     total_area = area_of_rectangular_walls + area_of_square_walls + area_of_custom_walls - area_of_doors_windows
     total_gallons = compute_gallons(total_area)
     total_cost = compute_paint_price(total_gallons)
-
-
-    print(f"For Room: {current_room}, the area to be painted is {total_area}:.2f square ft and will require {total_gallons} "
-          f"gallons to paint. This will cost the customer ${total_cost}:.2f")
+    print(f"For Room: {current_room}, the area to be painted is {total_area:.1f}: square ft and will require {total_gallons:.2f} "
+          f"gallons to paint. This will cost the customer ${total_cost:.2f}")
 
 
 def compute_rectangle_walls_area():
     length = int(input("Enter the length of the room in feet: "))
     width = int(input("Enter the width of the room in feet: "))
     height = int(input("Enter the height of the room in feet: "))
-    area_of_wall = calculate_rectangle_area(length, height) * 2
-    area_of_wall += calculate_rectangle_area(width, height) * 2
+    area_of_wall = calculate_rectangle_area(length, height) * two_wall
+    area_of_wall += calculate_rectangle_area(width, height) * two_wall
     return area_of_wall
 
 
@@ -46,11 +47,11 @@ def calculate_rectangle_area(length, width):
 
 def compute_square_walls_area():
     length = int(input("Enter the length of the room in feet: "))
-    return (length ** 2) * 4
+    return (length ** factor_of_square) * four_walls
 
 
 def compute_square_area(length):
-    return length ** 2
+    return length ** factor_of_square
 
 
 def compute_windows_doors_area():
@@ -61,7 +62,6 @@ def compute_windows_doors_area():
         width = int(input(f"Enter window/door width for window/door {i+1} in feet: "))
         area = length * width
         areas.append(area)
-
 
 
 def compute_custom_walls_area():
