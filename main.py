@@ -3,6 +3,7 @@
 area = 0
 length = 0
 width = 0
+height = 0
 
 def computeRoomArea(room_number):
     shape = input("Select the shape of the wall of the room from the following:\n"
@@ -19,6 +20,11 @@ def computeRoomArea(room_number):
 
 
 def computeRectangleWallsArea():
+    area = length * height * 2
+    area2 = width * height * 2
+    totalRoomArea = area + area2
+    return totalRoomArea
+
     pass
 
 
