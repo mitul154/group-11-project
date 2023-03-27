@@ -1,56 +1,59 @@
 # Initializing variables
+paint_coverage = 350    # Paint coverage in square feet per gallon (ft2/gal)
+paint_cost = 42     # Cost of each gallon of paint ($CDN/gal)
+labour_cost = 0
 
 area = 0
 length = 0
 width = 0
-height = 0
 
 def computeRoomArea(room_number):
     shape = input("Select the shape of the wall of the room from the following:\n"
                   "Type '1' for Rectangular"
                   "Type '2' for Square"
                   "Type '3' for Custom")
-    if shape == "Rectangular".casefold():
+    if shape == 1:
+        length = int(input("Enter the length of the room in feet: "))
+        width = int(input("Enter the width of the room in feet: "))
+        height = int(input("Enter the height of the room in feet: "))
+
         area = length * width
-    elif shape == "Square".casefold():
+        print(area)
+    elif shape == 2:
+        length = int(input("Enter the length of the wall"))
         area = length ** 2
-    elif shape == "Custom".casefold():
-        pass
+    elif shape == 3:
+        number_of_dimensions = int(input("Enter the number of dimensions: "))
 
 
 
 def computeRectangleWallsArea():
-    area = length * height * 2
-    area2 = width * height * 2
-    totalRoomArea = area + area2
-    return totalRoomArea
-
     pass
 
 
-def calculateRectangleArea():
+def calculate_rectangle_area():
     pass
 
 
-def computeSquareWallsArea():
+def compute_square_walls_area():
     pass
 
 
-def computeSquareArea():
+def compute_square_area():
     pass
 
 
-def computeWindowsDoorsArea():
+def compute_windows_doors_area():
     pass
 
 
-def computeCustomWallsArea():
+def compute_custom_walls_area():
     pass
 
 
-def computeGallons():
+def compute_gallons():
     pass
 
 
-def computePaintPrice():
+def compute_paint_price():
     pass
