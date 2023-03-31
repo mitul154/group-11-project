@@ -74,14 +74,14 @@ def compute_custom_walls_area():
 
 
 def compute_gallons(area):
-    AREAPERGALLON = 350
-    total_gallons = area / AREAPERGALLON
+    AREA_PER_GALLON = 350
+    total_gallons = area / AREA_PER_GALLON
     return total_gallons
 
 
 def compute_paint_price(gallons):
-    PRICEPERGALLON = 42
-    total_paint_price = gallons * PRICEPERGALLON
+    PRICE_PER_GALLON = 42
+    total_paint_price = gallons * PRICE_PER_GALLON
     return total_paint_price
 
 
