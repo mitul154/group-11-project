@@ -6,6 +6,9 @@ areas = []  # List to store the areas of the windows and doors
 two_wall = 2  # Number of walls that are rectangular
 four_walls = 4  # Number of walls that are square
 factor_of_square = 2  # Factor of square
+areas_ = []
+gallons = []
+price = []
 
 
 def compute_room_area(current_room):  # Function to compute the area of the room
@@ -28,6 +31,9 @@ def compute_room_area(current_room):  # Function to compute the area of the room
     total_area = area_of_rectangular_walls + area_of_square_walls + area_of_custom_walls - area_of_doors_windows  # Compute the total area of the room
     total_gallons = compute_gallons(total_area)  # Compute the total gallons of paint required
     total_cost = compute_paint_price(total_gallons)  # Compute the total cost of the paint
+    areas_.append(total_area)
+    gallons.append(total_gallons)
+    price.append(total_cost)
     print(f"For Room: {current_room}, the area to be painted is {total_area:.1f} square ft and will require {total_gallons:.2f} "  # Print the total area of the room, the total gallons of paint required and the total cost of the paint
           f"gallons to paint. This will cost the customer ${total_cost:.2f}")  # Print the total cost of the paint rounded to 2 decimal places
 
@@ -93,4 +99,5 @@ for i in range(number_of_rooms):  # For loop to compute the area of each room
     print(f"Room: {i+1}")  # Print the room number
     compute_room_area(i+1)  # Call the function to compute the area of the room
 
-print(f"Area to be painted is {} square ft and will require 6.43 gallons to paint. This will cost the customer $270.00Area to be painted is 2250.00 square ft and will require 6.43 gallons to paint. This will cost the customer $270.00")
+print(f"\nArea to be painted is {sum(areas_):.2f} square ft and will"
+      f" require {sum(gallons):.2f} gallons to paint. This will cost the customer ${sum(price):.2f}")
